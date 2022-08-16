@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+
+  database:
+    image: mysql:latest
+    environment:
+       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+       MYSQL_DATABASE: translation
+       MYSQL_USER_FILE: /run/secrets/db_user
+       MYSQL_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_root_password
+      - db_user
+      - db_password
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+      - unlimited_translation_database_volume:/var/lib/mysql
+      
+
+  backend_fastapi:
+    image: datatrigger/unlimited-translation_backend_fastapi
+
+  frontend_flask:
+    image: datatrigger/unlimited-translation_frontend_flask
+    depends_on:
+      - backend_fastapi
+      - database
+    ports:
+      - "5000:80"
+    environment:
+      FLASK_DB_USER_FILE: /run/secrets/db_user
+      FLASK_DB_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_user
+      - db_password
+
+secrets:
+    db_root_password:
+     external: true
+    db_user:
+     external: true
+    db_password:
+     external: true
+   
+
+volumes:
+  unlimited_translation_database_volume:
