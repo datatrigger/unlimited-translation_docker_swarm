@@ -43,7 +43,3 @@ The data will be persisted in the database even if the stack is down. If you wan
 Finally, deactivate the Swarm mode if needed:
 
 ```docker swarm leave --force```
-
-## Run the app on Kubernetes
-
-*Work in progress*
