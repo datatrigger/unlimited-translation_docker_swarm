@@ -21,7 +21,7 @@ services:
     image: datatrigger/unlimited-translation_backend_fastapi
 
   frontend_flask:
-    image: datatrigger/unlimited-translation_frontend_flask
+    image: datatrigger/unlimited-translation_frontend_flask:docker_swarm
     depends_on:
       - backend_fastapi
       - database
