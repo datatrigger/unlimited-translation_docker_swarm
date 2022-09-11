@@ -6,11 +6,11 @@ As a non-German speaker living in Switzerland, I often need to quickly translate
 * A FastAPI API back-end to translate English text, using open-source models (SpaCy, Hugging Face)
 * A MySQL database to store previous translations
 
-In this repo, we deploy the app on a single node with Docker Compose. In [this repo](https://github.com/datatrigger/unlimited-translation_kubernetes.git), the app is deployed on a Kubernetes cluster. 
+In this repo, we deploy the app on a single node with a Docker Compose file. In [this repo](https://github.com/datatrigger/unlimited-translation_kubernetes.git), the app is deployed on a Kubernetes cluster. 
 
 ## Run the app on a single host
 
-We could deploy the app with Docker Compose but since Docker secrets are implemented for database credentials, we have to use Docker Swarm:
+We could deploy the app with Docker Compose but since Docker secrets are implemented for database credentials, we have to use Docker Swarm (it is actually not that clear and things are currently changing, see the [official documentation](https://docs.docker.com/engine/swarm/secrets/), this [issue](https://github.com/moby/moby/issues/40046) and these pull requests: [PR 1](https://github.com/docker/compose/pull/9386), [PR 2](https://github.com/moby/moby/pull/43543)). Using Docker Compose or a single-node swarm actually does not change anything from our perspective: the ```docker-compose.yaml``` file is the same (except for the secrets!).
 
 1) Initiate Docker Swarm on your localhost
 
