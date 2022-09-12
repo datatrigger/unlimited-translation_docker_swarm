@@ -6,7 +6,7 @@ As a non-German speaker living in Switzerland, I often need to quickly translate
 * A FastAPI API backend to translate English text, using open-source models (SpaCy, Hugging Face)
 * A MySQL database to store previous translations
 
-In this repo, we deploy the app on a single node with a Docker Compose file. In [this repo](https://github.com/datatrigger/unlimited-translation_kubernetes.git), the app is deployed on a Kubernetes cluster. 
+In this repo, we deploy the app on a single node with a Docker Compose file. In [this repo](https://github.com/datatrigger/unlimited-translation_kubernetes), the app is deployed on a Kubernetes cluster. 
 
 ## Run the app on a single host
 
