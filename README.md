@@ -2,11 +2,15 @@
 
 As a non-German speaker living in Switzerland, I often need to quickly translate large texts, but I get annoyed by character limits on Google Translate or DeepL. Learning German may have been a *way* better call, but instead I decided to deploy a translation application. It's made of 3 containerized microservices:
 
-* A Flask frontend to get inputs and display translations
-* A FastAPI API backend to translate English text, using open-source models (SpaCy, Hugging Face)
-* A MySQL database to store previous translations
+* A [Flask frontend](https://github.com/datatrigger/unlimited_translation-frontend-swarm) to get inputs and display translations
+* A [FastAPI API backend](https://github.com/datatrigger/unlimited_translation-backend) to translate English text, using open-source models (SpaCy, Hugging Face)
+* A [MySQL database](https://hub.docker.com/_/mysql) to store previous translations
 
-In this repo, we deploy the app on a single node with a Docker Compose file. In [this repo](https://github.com/datatrigger/unlimited-translation_kubernetes), the app is deployed on a Kubernetes cluster. 
+In this repo, we deploy the app on a single node with a Docker Compose file, see also this [blog post](https://www.datatrigger.org/post/unlimited_translation_deploy_with_docker_compose/).
+
+In [this repo](https://github.com/datatrigger/unlimited-translation_kubernetes)
+
+For the deployment on a Kubernetes cluster, see [this repo](https://github.com/datatrigger/unlimited-translation_kubernetes) and this [blog post](https://www.datatrigger.org/post/unlimited_translation_kubernetes/). 
 
 ## Run the app on a single host
 
