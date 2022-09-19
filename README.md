@@ -6,9 +6,9 @@ As a non-German speaker living in Switzerland, I often need to quickly translate
 * A [FastAPI API backend](https://github.com/datatrigger/unlimited_translation-backend) to translate English text, using open-source models (SpaCy, Hugging Face)
 * A [MySQL database](https://hub.docker.com/_/mysql) to store previous translations
 
-In this repo, we deploy the app on a single node with Docker Compose, see also this [blog post](https://www.datatrigger.org/post/unlimited_translation_deploy_with_docker_compose/).
+In this repo, we deploy the app on a single node with Docker Compose, see also this [blog post](https://blog.vlgdata.io/post/unlimited_translation_deploy_with_docker_compose/).
 
-For the deployment on a Kubernetes cluster, see [repo](https://github.com/datatrigger/unlimited-translation_kubernetes) and this [blog post](https://www.datatrigger.org/post/unlimited_translation_kubernetes/). 
+For the deployment on a Kubernetes cluster, see [repo](https://github.com/datatrigger/unlimited-translation_kubernetes) and this [blog post](https://blog.vlgdata.io/post/unlimited_translation_kubernetes/). 
 
 ## Run the app on a single host
 
